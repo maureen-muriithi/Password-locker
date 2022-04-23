@@ -1,4 +1,6 @@
-import random  # To be used to generate a random password
+import random       # Enables the app to generate a random number for the passwords
+import string       # Allows one to create and customize your own string for the password
+import pyperclip    # A third party module that allows one to copy and paste items to ther clipboard. 
 
 
 class User:
@@ -28,7 +30,7 @@ class User:
         '''
         User.user_list.remove(self) # Remove method deletes an item from a list
     
-    @classmethod
+    @classmethod  # A decorator that is bound to the class and not the object of the class
     def find_by_username(cls, username):
         ''' 
         This method takes in the username inputted and returns a user that matches the username.
@@ -43,6 +45,17 @@ class User:
         This method enables one to view all the users available
         '''
         return cls.user_list
+
+    @classmethod
+    def verify_user (cls, email, password):
+        '''
+        This method verifies if a user exists, and if the details are correct
+        '''
+        for user in cls.user_list:
+            if user.email==email and user.password == password:
+                return True
+        return False
+    
 
 class Credentials:
     '''
@@ -65,7 +78,13 @@ class Credentials:
         '''
         Credentials.credentials_list.append(self)
     
-    #def generate_password(length=6)
+    #def generate_password(self):
+      #  '''
+        #This method generates random passwords for users
+      #  '''
+        # stringLength = (input(print("Please enter the preferred length for your password: ")))
+      #  gen_password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+      #  return gen_password
     
     def delete_credentials(self):
         '''
@@ -75,11 +94,28 @@ class Credentials:
 
     @classmethod
     def find_by_account_name(cls,account_name):
+        '''
+        This method takes in the account_name inputted and returns credentials that matches the account name.
+        '''
 
-        for credential in cls.credentials_list:
+        for credential in cls.credentials_list:     #Loops through the credentials list to find matchng credentials
             if credential.account_name == account_name:
                 return credential
+    
+    @classmethod
+    def view_credentials(cls):
+        '''
+        This method enables the user to view all the credentials available
+        '''
+        return cls.credentials_list
 
+    @classmethod
+    def copy_password(cls,account_name):
+        '''
+        Pyperclip method enables the user to copy paste the password of the account name provided
+        '''
+        credentials_found = Credentials.find_by_account_name(account_name)
+        pyperclip.copy(credentials_found.password)
     
 
 
