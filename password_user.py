@@ -29,10 +29,18 @@ class User:
         ''' 
         This method takes in the username inputted and returns a user that matches the username.
         '''
-        for user in cls.user_list:
+        for user in cls.user_list:      # Loops through the whole userlist to find a matching username
             if user.username == username:
                 return user
     
+    @classmethod
+    def view_users_list(cls):
+        '''
+        This method enables one to view all the users available
+        '''
+        return cls.user_list
+
+
 
 
 
