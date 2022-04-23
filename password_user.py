@@ -4,12 +4,12 @@ class User:
     '''
     user_list = [] # Empty user list
 
-    def __init__(self, user_name, password):
+    def __init__(self, username, password):
         '''
         init method that defines properties for the user class
-        Args: user_name, password
+        Args: username, password
         '''
-        self.user_name = user_name
+        self.username = username
         self.password = password
     
     def save_user(self):
@@ -24,5 +24,16 @@ class User:
         '''
         User.user_list.remove(self) # Remove method deletes an item from a list
     
+    @classmethod
+    def find_by_username(cls, username):
+        ''' 
+        This method takes in the username inputted and returns a user that matches the username.
+        '''
+        for user in cls.user_list:
+            if user.username == username:
+                return user
     
+
+
+
     
