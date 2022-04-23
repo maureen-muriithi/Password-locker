@@ -40,7 +40,12 @@ class User:
         '''
         return cls.user_list
 
-
+class Credentials:
+    '''
+    A class that generates new instances for a user's credentials
+    '''
+    credentials_list = [] # Empty list for credentials
+    
 
 
 
