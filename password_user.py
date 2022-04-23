@@ -14,9 +14,15 @@ class User:
     
     def save_user(self):
         '''
-        save_user method stores a users details in the user_list
+        save_user method stores a user in the user_list
         '''
-        User.user_list.append(self) # Append adds the new istance in the 'empty user list'
+        User.user_list.append(self) # Append method adds an item in the 'empty user list'
+    
+    def delete_user(self):
+        '''
+        delete_user method deletes a user from the user_list
+        '''
+        User.user_list.remove(self) # Remove method deletes an item from a list
     
     
     
