@@ -1,3 +1,6 @@
+import random  # To be used to generate a random password
+
+
 class User:
     '''
     A class that generates new instances for a user.
@@ -58,9 +61,27 @@ class Credentials:
 
     def save_credentials(self):
         '''
-        save_credentials method stores a user's credentials in the credentials_list
+        save_credentials method stores user's credentials in the credentials_list
         '''
         Credentials.credentials_list.append(self)
+    
+    #def generate_password(length=6)
+    
+    def delete_credentials(self):
+        '''
+        delete_credentials method removes user's credentials in the credentials_list
+        '''
+        Credentials.credentials_list.remove(self)
+
+    @classmethod
+    def find_by_account_name(cls,account_name):
+
+        for credential in cls.credentials_list:
+            if credential.account_name == account_name:
+                return credential
+
+    
+
 
 
     
