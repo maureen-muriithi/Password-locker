@@ -4,12 +4,13 @@ class User:
     '''
     user_list = [] # Empty user list
 
-    def __init__(self, username, password):
+    def __init__(self, username, email, password):
         '''
         init method that defines properties for the user class
         Args: username, password
         '''
         self.username = username
+        self.email = email
         self.password = password
     
     def save_user(self):
@@ -45,8 +46,21 @@ class Credentials:
     A class that generates new instances for a user's credentials
     '''
     credentials_list = [] # Empty list for credentials
-    
 
+    def __init__(self, account_name, email, password):
+        '''
+        init method that defines properties for the user class
+        Args: username, password
+        '''
+        self.account_name = account_name
+        self.email = email
+        self.password = password
+
+    def save_credentials(self):
+        '''
+        save_credentials method stores a user's credentials in the credentials_list
+        '''
+        Credentials.credentials_list.append(self)
 
 
     
