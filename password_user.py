@@ -1,6 +1,6 @@
 import random       # Enables the app to generate a random number for the passwords
 import string       # Allows one to create and customize your own string for the password
-import pyperclip    # A third party module that allows one to copy and paste items to ther clipboard. 
+# import pyperclip    # A third party module that allows one to copy and paste items to ther clipboard. 
 
 
 class User:
@@ -12,7 +12,7 @@ class User:
     def __init__(self, username, email, password):
         '''
         init method that defines properties for the user class
-        Args: username, password
+        Args: username, email, password
         '''
         self.username = username
         self.email = email
@@ -63,13 +63,13 @@ class Credentials:
     '''
     credentials_list = [] # Empty list for credentials
 
-    def __init__(self, account_name, email, password):
+    def __init__(self, account_name, user_name, password):
         '''
-        init method that defines properties for the user class
-        Args: username, password
+        init method that defines properties for the credentials class
+        Args: account_name, user_name, password
         '''
         self.account_name = account_name
-        self.email = email
+        self.user_name = user_name
         self.password = password
 
     def save_credentials(self):
@@ -115,7 +115,7 @@ class Credentials:
         Pyperclip method enables the user to copy paste the password of the account name provided
         '''
         credentials_found = Credentials.find_by_account_name(account_name)
-        pyperclip.copy(credentials_found.password)
+        # pyperclip.copy(credentials_found.password)
     
 
 
