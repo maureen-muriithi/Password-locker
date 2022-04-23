@@ -12,4 +12,11 @@ class User:
         self.user_name = user_name
         self.password = password
     
+    def save_user(self):
+        '''
+        save_user method stores a users details in the user_list
+        '''
+        User.user_list.append(self) # Append adds the new istance in the 'empty user list'
+    
+    
     
