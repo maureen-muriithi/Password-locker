@@ -91,7 +91,42 @@ def copy_password(account_name):
     """
     return Credentials.copy_password(account_name)
 
+def main():
+    print("Please create an account to get started. \nAlready have an account? Please log in to continue ")
+    print("Use these short codes to proceed with the desired action. \n CA -> Create an account.. \n LI -> Log in..")
 
+    short_code = input().lower().strip()
+    if short_code == "ca":
+        print("Welcome to Pass-App. To create your new account, please fill in these details")
+        print("Create a username")
+        username = input("")
+        print("Enter your email")
+        email = input("")
+        while True:
+            print(" TP - To type your own pasword:\n GP - To generate random Password")
+            password_Choice = input().lower().strip()
+            if password_Choice == 'tp':
+                password = input("Enter Password\n")
+                break
+            elif password_Choice == 'gp':
+                password = generate_Password()
+                break
+            else:
+                print("Invalid password please try again")
+        save_user(create_user_account(username,email,password))
+        print("Welcome aboard {username}. Your password is, {password}")
+        print("\n")
+
+    elif short_code == "li":
+        print("\n")
+        print("Please enter your Username and your Password to log in:")
+        print('*' * 120)
+        username = input("User name: ")
+        password = input("password: ")
+        login = user_login(username,password)
+        if user_login == login:
+            print(f"Welcome back {username}. Let's proceed!")  
+            print('\n')
         
         
             
