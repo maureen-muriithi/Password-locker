@@ -1,3 +1,4 @@
+from curses import use_default_colors
 import unittest
 
 from requests import delete
@@ -38,6 +39,12 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)
+    
+    def test_display_user(self):
+        '''
+        test_display_user test case to test if the user(s), will be displayed
+        '''
+        self.assertEqual(User.view_users(), User.user_list)
 
     def test_save_multiple_users(self):
         '''

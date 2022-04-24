@@ -40,7 +40,7 @@ class User:
                 return user
     
     @classmethod
-    def view_users_list(cls):
+    def view_users(cls):
         '''
         This method enables one to view all the users available
         '''
