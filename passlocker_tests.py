@@ -98,8 +98,6 @@ class TestCredentials(unittest.TestCase):
         test_credential = Credentials("Gmail","moh2wanja@gmail.com", "Maureen22!") # Another new credentials
         test_credential.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
-    
-    #def generate_password
 
     def test_delete_credentials(self):
         self.new_credential.save_credentials()

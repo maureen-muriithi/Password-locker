@@ -78,13 +78,12 @@ class Credentials:
         '''
         Credentials.credentials_list.append(self)
     
-    #def generate_password(self):
-      #  '''
-        #This method generates random passwords for users
-      #  '''
-        # stringLength = (input(print("Please enter the preferred length for your password: ")))
-      #  gen_password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
-      #  return gen_password
+    def generate_password(size = 6, char=string.ascii_uppercase + string.ascii_lowercase + string.digits):
+        '''
+        This method generates random passwords for users
+        '''
+        gen_pass = ''.join(random.choice(char)for _ in range(size))  
+        return gen_pass
     
     def delete_credentials(self):
         '''
