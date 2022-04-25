@@ -1,6 +1,3 @@
-# import email
-import email
-import re
 from password_user import User, Credentials
 
 def function():
@@ -17,6 +14,8 @@ print("                                       Hello, welcome to Pass-App!")
 print(" ")
 print(" PASS-APP is a cool application that enables you to save your credentials, that is various accounts, usernames and their passwords!!")
 print('*' *125)
+
+# Class user functions 
 
 def create_user_account(username,email,password):
     '''
