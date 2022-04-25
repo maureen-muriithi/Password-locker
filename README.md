@@ -24,6 +24,7 @@ Therefore, this amazing application that will help us manage our passwords and e
 
 #### Screenshot
 - A screenshot of how the app works.
+- [![Screenshot-from-2022-04-25-14-22-02.png](https://i.postimg.cc/VvsYShxv/Screenshot-from-2022-04-25-14-22-02.png)](https://postimg.cc/jw9VmMdY)
 
 #### Technologies Used
 
